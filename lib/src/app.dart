@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' show get;
+import 'package:myapp/src/widgets/image_list.dart';
 import 'models/image_models.dart';
 import 'dart:convert';
 
@@ -8,8 +9,6 @@ class App extends StatefulWidget {
     return AppState();
   }
 }
-
-
 
 class AppState extends State<App> {
   
@@ -29,13 +28,13 @@ class AppState extends State<App> {
   Widget build(context) {
     return MaterialApp(
       home : Scaffold(
-        body: Text('$counter'), 
+        body: ImageList(images), 
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.arrow_back),
           onPressed: fetchImage,
         ),
         appBar: AppBar(
-          title: Text("Title Bar"),
+          title: Text("Images List"),
         ),
       )
     );
